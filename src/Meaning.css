@@ -1,9 +1,10 @@
 .Meaning {
   text-align: left;
   margin: 0 auto;
-  max-width: 500px;
+ padding: 0 30px;
  color:grey;
  font-size: 13px;
+ 
 }
 
 .Meaning .partOfSpeech{
