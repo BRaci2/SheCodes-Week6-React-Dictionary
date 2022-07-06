@@ -2,3 +2,27 @@
   color: rgb(208, 62, 87);
  
 }
+
+.Dictionary section{
+  background: white;
+  padding: 10px;
+  border-radius: 6px;
+  box-shadow:0 5px 5px rgba(1, 1, 1, 0.2);
+  margin: 10px;
+}
+
+.Dictionary .Search{
+  width: 80%;
+  border: 1px solid grey;
+  border-radius: 6px;
+  padding: 5px 5px;
+  color: grey;
+  
+}
+.Dictionary .OK{
+  width: 10%;
+  border: 1px solid grey;
+  border-radius: 6px;
+  padding: 5px 5px;
+  color: grey;
+}
