@@ -14,6 +14,6 @@ export default function Synonyms(props) {
       </div>
     );
   } else {
-    return "";
+    return ("");
   }
 }
