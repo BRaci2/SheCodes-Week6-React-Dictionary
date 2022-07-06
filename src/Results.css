@@ -1,7 +1,12 @@
 .Results {
   text-align: left;
-  
 }
 .Results h2 {
   font-size: 28px;
+}
+
+.Results h3 {
+  margin-top: 4px;
+  margin-bottom: 4px;
+
 }

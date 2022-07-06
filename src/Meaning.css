@@ -1,6 +1,19 @@
 .Meaning {
-  text-align: center;
+  text-align: left;
   margin: 0 auto;
   max-width: 500px;
- 
+ color:grey;
+ font-size: 13px;
+}
+
+.Meaning .partOfSpeech{
+  color: #D03E57;
+  font-size: 20px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.Meaning .synonym {
+  opacity: 60%;
+  
 }

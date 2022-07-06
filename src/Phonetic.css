@@ -1,4 +1,23 @@
 .Phonetic {
   color: grey;
-  font-size: 20px;
+}
+
+.Phonetic a {
+  border: 1px solid grey;
+  text-decoration: none;
+  padding: 2px 5px;
+  border-radius: 5px;
+  color: grey;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.Phonetic a:hover {
+  background: rgba(230, 158, 171, 0.3);
+}
+
+.Phonetic .phoneticText {
+  font-weight: 200;
+  margin: 0 10px 0 10px;
+  font-size: 14px;
 }

@@ -12,7 +12,7 @@
 }
 
 .Dictionary .Search{
-  width: 80%;
+  width: 70%;
   border: 1px solid grey;
   border-radius: 6px;
   padding: 5px 5px;
@@ -23,6 +23,7 @@
   width: 10%;
   border: 1px solid grey;
   border-radius: 6px;
-  padding: 5px 5px;
+  padding: 5px;
   color: grey;
+  margin-left: 2px;
 }
