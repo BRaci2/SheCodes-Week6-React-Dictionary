@@ -1,1 +1,33 @@
-// 563492ad6f917000010000013e7ee9bbbc0d4daca24136e8aaff0e87
+import React from "react";
+import "./Photos.css";
+import "bootstrap/dist/css/bootstrap.css";
+
+export default function Photos(props) {
+  if (props.photos.length) {
+    return (
+      <section className="Photos">
+        <div className="row">
+          {props.photos.map(function (photo, index) {
+            return (
+              <div className="col-4" key={index}>
+                <a
+                  href={photo.src.original}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src={photo.src.landscape}
+                    className="img-fluid"
+                    alt={photo.photographer}
+                  />
+                </a>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+    );
+  } else {
+    return "";
+  }
+}
