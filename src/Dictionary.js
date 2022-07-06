@@ -4,31 +4,43 @@ import axios from "axios";
 import Results from "./Results";
 
 export default function Dictionary(props) {
-  let [word, setWord] = useState(props.defaultKeyword);
+  let [keyword, setKeyword] = useState(props.defaultKeyword);
   let [results, setResults] = useState({});
   let [loaded, setLoaded] = useState(false);
+  let [photos, setPhotos] = useState([]);
+
+  function handleImages(response) {
+    setPhotos(response.data.photos);
+  }
 
   function handleApiResponse(response) {
     setResults(response.data[0]);
+    let pexelsApiUrl = `https://api.pexels.com/v1/search?query=({response.data[0].word}&per_page=1`;
+    let pexelsApiKey =
+      "563492ad6f917000010000013e7ee9bbbc0d4daca24136e8aaff0e87";
+    axios
+      .get(pexelsApiUrl, {
+        headers: { Authorization: `Bearer ${pexelsApiKey}` },
+      })
+      .then(handleImages);
   }
 
   function load() {
     setLoaded(true);
     search();
   }
-
+  function handleWordChange(event) {
+    event.preventDefault();
+    setKeyword(event.target.value);
+  }
   function search() {
-    let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
+    let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
     axios.get(apiUrl).then(handleApiResponse);
   }
 
   function handleSubmit(event) {
     event.preventDefault();
     search();
-  }
-  function handleWordChange(event) {
-    event.preventDefault();
-    setWord(event.target.value);
   }
 
   if (loaded) {
@@ -38,11 +50,10 @@ export default function Dictionary(props) {
           <input
             className="Search"
             type="search"
+            defaultValue={props.defaultKeyword}
             placeholder="Dictionary search..."
             autoFocus={true}
-            defaultValue={props.defaultKeyword}
             onChange={handleWordChange}
-
           />
           <input className="OK" type="submit" value="OK" />
         </form>
