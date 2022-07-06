@@ -4,9 +4,17 @@ import "./Phonetic.css";
 export default function Phonetic(props) {
   if (props.phonetic) {
     return (
-      <span className="Phonetic">
+      <div className="Phonetic">
+        <a
+          href={props.phonetic.audio}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Listen
+        </a>
+      
         <h2>{props.phonetic.text}</h2>
-      </span>
+      </div>
     );
   } else {
     return ("wooooo");
